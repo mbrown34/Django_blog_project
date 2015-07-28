@@ -4,16 +4,17 @@
 	</head>
 	<body>
 		<div>
-			<p>Hi there!</p>
+			<h1>Django Blog Project (by Matthew)</h1>
 		</div>
 
 		<div>
-		<p>Looks like its working so far...</p>
+			{% for post in posts %}
 			<div>
-				<ul>	<li> This is the first item in the list</li>
-					<li> This is the 2nd item in the list</li>
-				</ul>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</p>
 			</div>
+			{% endfor %}
 		</div>
 	</body>
 </html>
